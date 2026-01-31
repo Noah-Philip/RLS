@@ -1,0 +1,483 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RLS Advocacy & Legislative Finder</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" aria-label="Primary">
+      <div class="container header-content">
+        <div class="logo" aria-label="RLS Advocacy Network">
+          <span class="logo-mark">RLS</span>
+          <span class="logo-text">Advocacy Network</span>
+        </div>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="#about">About RLS</a>
+          <a href="#symptoms">Symptoms &amp; Diagnosis</a>
+          <a href="#treatment">Treatment &amp; Care</a>
+          <a href="#community">Community &amp; Support</a>
+          <a href="#research">Research &amp; Resources</a>
+          <a class="cta" href="#donate">Donate</a>
+          <button class="icon-button" type="button" aria-label="Search">
+            <span aria-hidden="true">🔍</span>
+          </button>
+        </nav>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="container hero-content">
+          <div>
+            <p class="eyebrow">Restless Legs Syndrome Advocacy</p>
+            <h1 id="hero-title">Living with Restless Legs Syndrome?</h1>
+            <p class="hero-subtitle">
+              Support, research, and resources for patients and caregivers.
+            </p>
+            <div class="hero-actions">
+              <a class="button" href="#about">Learn About RLS</a>
+              <a class="text-link" href="#self-assessment">Take a Self-Assessment</a>
+            </div>
+          </div>
+          <div class="hero-visual" role="presentation">
+            <div class="hero-circle"></div>
+            <div class="hero-lines"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="about" aria-labelledby="about-title">
+        <div class="container two-column">
+          <div>
+            <h2 id="about-title">Understand the Issue</h2>
+            <p>
+              Restless Legs Syndrome (RLS) is a neurological condition that creates an
+              uncontrollable urge to move the legs, often with uncomfortable sensations.
+              Symptoms can intensify at night, disrupting sleep and daily functioning.
+            </p>
+            <p>
+              RLS affects people of all ages, with higher prevalence among women, older adults,
+              and people managing chronic conditions. It matters because untreated RLS can lead
+              to insomnia, anxiety, and diminished quality of life for patients and caregivers.
+            </p>
+            <ul class="feature-list">
+              <li><strong>What is it?</strong> A sensory-motor disorder that disrupts rest and sleep.</li>
+              <li><strong>Why does it matter?</strong> Sleep loss and pain can impact work, school, and mental health.</li>
+              <li><strong>Who does it affect?</strong> An estimated 7-10% of adults, including children and pregnant people.</li>
+            </ul>
+          </div>
+          <div class="illustration" role="img" aria-label="Illustration of the nervous system"></div>
+        </div>
+        <div class="container data-strip">
+          <div>
+            <h3>Data &amp; Stories</h3>
+            <p><strong>Prevalence:</strong> 1 in 10 adults experience symptoms; 3% have severe RLS.</p>
+            <p><strong>Patient voice:</strong> “I sleep in two-hour stretches and still show up for my family.”</p>
+            <p><strong>Current gaps:</strong> Limited research funding and inconsistent access to specialists.</p>
+          </div>
+          <div>
+            <h3>Current Policy Gaps</h3>
+            <ul class="plain-list">
+              <li>Insufficient NIH research investment specific to RLS.</li>
+              <li>Limited provider education on diagnosis and long-term care.</li>
+              <li>Few community resources for rural and underserved patients.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="policy" aria-labelledby="policy-title">
+        <div class="container">
+          <h2 id="policy-title">Know the Policy Landscape</h2>
+          <div class="policy-grid">
+            <div>
+              <h3>Legislative Task</h3>
+              <p>
+                Support dedicated NIH funding for Restless Legs Syndrome research and improve
+                clinician training.
+              </p>
+              <p>
+                <strong>Why legislators should care:</strong> Better treatment reduces long-term
+                healthcare costs, improves sleep-related public health, and supports caregivers.
+              </p>
+            </div>
+            <div>
+              <h3>Bill Tracker</h3>
+              <ul class="plain-list">
+                <li><strong>H.R. 2031:</strong> RLS Research Advancement Act – House Energy &amp; Commerce Committee.</li>
+                <li><strong>S. 1120:</strong> Sleep Health Equity Act – Senate HELP Committee.</li>
+                <li><strong>Status:</strong> Awaiting committee hearings; advocacy needed for co-sponsors.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Key Committees</h3>
+              <ul class="plain-list">
+                <li>House Energy &amp; Commerce (Health Subcommittee)</li>
+                <li>Senate Health, Education, Labor &amp; Pensions (HELP)</li>
+                <li>Appropriations Subcommittees on Labor-HHS</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="finder" aria-labelledby="finder-title">
+        <div class="container">
+          <h2 id="finder-title">Identify Your Legislators</h2>
+          <p>
+            Enter your ZIP code to find your federal legislators, contact details, and committee
+            assignments. This demo tool uses sample data for layout and planning.
+          </p>
+          <form class="finder" aria-label="Legislator lookup">
+            <label for="zip">ZIP Code</label>
+            <input id="zip" name="zip" type="text" inputmode="numeric" placeholder="e.g., 20001" />
+            <button class="button" type="submit">Find Legislators</button>
+          </form>
+          <div id="finder-results" class="results" aria-live="polite"></div>
+          <div class="guidance">
+            <h3>Who is most influential?</h3>
+            <ul class="plain-list">
+              <li>Prioritize members of health-related committees listed above.</li>
+              <li>Look for legislators who are co-sponsors of sleep or neurology bills.</li>
+              <li>Contact your district office for meetings and local events.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="action" aria-labelledby="action-title">
+        <div class="container">
+          <h2 id="action-title">Learn How to Take Action</h2>
+          <div class="action-grid">
+            <div>
+              <h3>Email a Legislator</h3>
+              <ol>
+                <li>Open with your location and your connection to RLS.</li>
+                <li>Ask for specific action: support NIH RLS funding.</li>
+                <li>Share a brief personal story and thank them.</li>
+              </ol>
+            </div>
+            <div>
+              <h3>Call Their Office</h3>
+              <p class="script">
+                “Hello, my name is ____ and I live in _____. I’m calling to ask Rep. ____ to
+                support increased NIH funding for Restless Legs Syndrome research. It would help
+                families like mine. Thank you.”
+              </p>
+            </div>
+            <div>
+              <h3>Request a Meeting</h3>
+              <ul class="plain-list">
+                <li>Ask for district office hours or town halls.</li>
+                <li>Bring one or two specific asks and a personal story.</li>
+                <li>Follow up with a thank-you email and any resources.</li>
+              </ul>
+            </div>
+          </div>
+          <div class="dos-donts">
+            <div>
+              <h3>Advocacy Do’s</h3>
+              <ul class="plain-list">
+                <li>Stay respectful and concise.</li>
+                <li>Use clear asks and repeat them.</li>
+                <li>Share a personal impact story.</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Advocacy Don’ts</h3>
+              <ul class="plain-list">
+                <li>Don’t overwhelm with too much data.</li>
+                <li>Don’t use hostile language or threats.</li>
+                <li>Don’t forget to leave your contact info.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="tools" aria-labelledby="tools-title">
+        <div class="container">
+          <h2 id="tools-title">Tools for Communication</h2>
+          <div class="tools-grid">
+            <div>
+              <h3>Letter / Email Template</h3>
+              <textarea aria-label="Letter template">
+Dear [Legislator Name],
+
+I am a constituent from [City, State]. I’m writing to ask you to support increased NIH funding for Restless Legs Syndrome research.
+
+RLS affects me/my family by [share story]. More research would improve treatments and give families hope.
+
+Thank you for your leadership,
+[Name]
+              </textarea>
+            </div>
+            <div>
+              <h3>Phone Script</h3>
+              <p class="script">
+                “I’m a constituent in [ZIP]. I’m calling to ask you to support NIH funding for RLS
+                research. It will improve sleep health and reduce long-term costs.”
+              </p>
+              <h3>Social Media Toolkit</h3>
+              <ul class="plain-list">
+                <li>Sample post: “I’m advocating for #RLS research funding. Sleep health matters.”</li>
+                <li>Hashtags: #RestlessLegs #SleepHealth #HealthEquity</li>
+                <li>Graphics: Download our shareable banners from the resource list below.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="confidence" aria-labelledby="confidence-title">
+        <div class="container">
+          <h2 id="confidence-title">Confidence &amp; Motivation</h2>
+          <div class="confidence-grid">
+            <div>
+              <h3>Training Resources</h3>
+              <p>
+                Watch “How to talk to your legislator in 3 minutes” and take our advocacy mini-course.
+              </p>
+              <ul class="plain-list">
+                <li>Video: Advocacy in 3 Minutes</li>
+                <li>Webinar: Sharing your RLS story</li>
+                <li>Guide: How to prepare for a meeting</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Success Stories</h3>
+              <p>
+                “After meeting with my senator, she signed on as a co-sponsor of the RLS Research
+                Advancement Act.” – Community Advocate
+              </p>
+              <p>
+                “Our local group helped secure a sleep health hearing in our state legislature.”
+              </p>
+            </div>
+            <div>
+              <h3>First Steps Checklist</h3>
+              <ul class="checklist">
+                <li><input type="checkbox" /> Sign up for advocacy alerts.</li>
+                <li><input type="checkbox" /> Contact one legislator this week.</li>
+                <li><input type="checkbox" /> Share a resource with a friend.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="support" aria-labelledby="support-title">
+        <div class="container">
+          <h2 id="support-title">Ongoing Support</h2>
+          <div class="support-grid">
+            <div>
+              <h3>Advocacy Alerts</h3>
+              <p>
+                Get notified when urgent action is needed on hearings, votes, or budget decisions.
+              </p>
+              <button class="button" type="button">Sign Up for Alerts</button>
+            </div>
+            <div>
+              <h3>Key Dates</h3>
+              <ul class="plain-list">
+                <li>May 15: NIH budget listening session</li>
+                <li>June 3: House Energy &amp; Commerce hearing</li>
+                <li>July 10: Senate HELP committee vote</li>
+              </ul>
+            </div>
+            <div>
+              <h3>Contact Our Team</h3>
+              <p>Email: advocacy@rlsnetwork.org</p>
+              <p>Phone: (555) 123-4567</p>
+              <p>Live help: Mon–Fri, 9 a.m.–5 p.m.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="symptoms" aria-labelledby="symptoms-title">
+        <div class="container">
+          <h2 id="symptoms-title">Symptoms &amp; Diagnosis</h2>
+          <div class="accordion" role="tablist">
+            <button class="accordion-trigger" aria-expanded="true" aria-controls="symptom-1" id="symptom-tab-1">
+              Urge to move legs
+            </button>
+            <div class="accordion-panel" id="symptom-1" role="region" aria-labelledby="symptom-tab-1">
+              Uncomfortable sensations appear at rest and improve with movement.
+            </div>
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="symptom-2" id="symptom-tab-2">
+              Sleep disruption
+            </button>
+            <div class="accordion-panel" id="symptom-2" role="region" aria-labelledby="symptom-tab-2" hidden>
+              Symptoms intensify at night, leading to insomnia and daytime fatigue.
+            </div>
+            <button class="accordion-trigger" aria-expanded="false" aria-controls="symptom-3" id="symptom-tab-3">
+              Diagnosis steps
+            </button>
+            <div class="accordion-panel" id="symptom-3" role="region" aria-labelledby="symptom-tab-3" hidden>
+              Providers review medical history, medications, iron levels, and sleep patterns.
+            </div>
+          </div>
+          <div class="diagnosis-stages" aria-label="Diagnosis stages">
+            <span>Screening</span>
+            <span>Clinical evaluation</span>
+            <span>Treatment planning</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="treatment" aria-labelledby="treatment-title">
+        <div class="container">
+          <h2 id="treatment-title">Treatment &amp; Care</h2>
+          <div class="treatment-grid">
+            <div>
+              <h3>Medications</h3>
+              <p>Evidence-based prescriptions to reduce symptoms and improve sleep.</p>
+            </div>
+            <div>
+              <h3>Lifestyle changes</h3>
+              <p>Movement, hydration, and balanced nutrition to reduce flare-ups.</p>
+            </div>
+            <div>
+              <h3>Sleep hygiene</h3>
+              <p>Consistent bedtime routines, light management, and stress reduction.</p>
+            </div>
+            <div>
+              <h3>Medical support</h3>
+              <p>Work with specialists in neurology or sleep medicine.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="community" aria-labelledby="community-title">
+        <div class="container">
+          <h2 id="community-title">Community &amp; Support</h2>
+          <div class="social-strip" aria-label="Community updates">
+            <span>#RLSAwareness Day</span>
+            <span>New support group in Chicago</span>
+            <span>Advocacy webinar this Friday</span>
+            <span>Volunteer spotlight: Jasmine L.</span>
+          </div>
+          <div class="testimonials">
+            <p>
+              “The support network helped me feel seen and gave me tools to talk with my doctor.”
+            </p>
+            <p>
+              “Sharing my story with legislators was easier after using the templates.”
+            </p>
+          </div>
+          <a class="button" href="#support">Join Our Support Network</a>
+        </div>
+      </section>
+
+      <section class="section" id="research" aria-labelledby="research-title">
+        <div class="container">
+          <h2 id="research-title">Research &amp; Resources</h2>
+          <div class="resource-layout">
+            <aside class="filter" aria-label="Filter resources">
+              <h3>Filter by topic</h3>
+              <ul>
+                <li><button type="button">Research updates</button></li>
+                <li><button type="button">Patient guides</button></li>
+                <li><button type="button">Policy briefs</button></li>
+              </ul>
+            </aside>
+            <div class="resource-list">
+              <ul>
+                <li><a href="#">RLS Research Brief (PDF)</a></li>
+                <li><a href="#">Patient Care Checklist</a></li>
+                <li><a href="#">Partner organization directory</a></li>
+                <li><a href="#">Advocacy graphics pack</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section alt" id="donate" aria-labelledby="donate-title">
+        <div class="container donate">
+          <div>
+            <h2 id="donate-title">Fuel RLS Research and Advocacy</h2>
+            <p>
+              Your donation supports education, policy outreach, and community programs for people
+              living with Restless Legs Syndrome.
+            </p>
+          </div>
+          <button class="button" type="button">Donate Now</button>
+        </div>
+      </section>
+
+      <section class="section" id="self-assessment" aria-labelledby="assessment-title">
+        <div class="container">
+          <h2 id="assessment-title">Self-Assessment</h2>
+          <p>
+            Not sure if your symptoms align with RLS? Use our quick checklist and share the results
+            with a healthcare professional.
+          </p>
+          <ul class="checklist">
+            <li><input type="checkbox" /> Urge to move legs when resting.</li>
+            <li><input type="checkbox" /> Symptoms worsen at night.</li>
+            <li><input type="checkbox" /> Relief with movement or stretching.</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>Contact</h3>
+          <p>RLS Advocacy Network</p>
+          <p>123 Sleep Health Way, Suite 200</p>
+          <p>Washington, DC 20001</p>
+          <p>Email: hello@rlsnetwork.org</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#about">About RLS</a></li>
+            <li><a href="#finder">Legislator Finder</a></li>
+            <li><a href="#action">Take Action</a></li>
+            <li><a href="#research">Resources</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Newsletter</h3>
+          <p>Get updates on policy alerts and events.</p>
+          <form class="newsletter" aria-label="Newsletter signup">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com" />
+            <button class="button" type="submit">Sign Up</button>
+          </form>
+          <div class="social">
+            <a href="#" aria-label="Facebook">Fb</a>
+            <a href="#" aria-label="Twitter">Tw</a>
+            <a href="#" aria-label="Instagram">Ig</a>
+            <a href="#" aria-label="LinkedIn">In</a>
+          </div>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <span>Accessibility Statement</span>
+        <span>Privacy</span>
+        <span>Terms</span>
+      </div>
+    </footer>
+
+    <button class="help-bubble" type="button" aria-label="Open live help">
+      Need Help?
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
