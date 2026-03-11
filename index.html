@@ -10,6 +10,10 @@
       href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
@@ -55,9 +59,10 @@
         </div>
       </section>
 
-      <section class="section" id="about" aria-labelledby="about-title">
-        <div class="container two-column">
+      <section class="section interior-hero" id="about" aria-labelledby="about-title">
+        <div class="container interior-hero-content two-column">
           <div>
+            <p class="eyebrow">Inside RLS</p>
             <h2 id="about-title">Understand the Issue</h2>
             <p>
               Restless Legs Syndrome (RLS) is a neurological condition that creates an
@@ -75,16 +80,23 @@
               <li><strong>Who does it affect?</strong> An estimated 7-10% of adults, including children and pregnant people.</li>
             </ul>
           </div>
-          <div class="illustration" role="img" aria-label="Illustration of the nervous system"></div>
+          <div class="support-panel">
+            <h3>Patient Quote</h3>
+            <p>
+              “RLS isn't just restlessness. It's years of interrupted sleep and trying to show up
+              anyway for the people I love.”
+            </p>
+            <a class="button" href="#self-assessment">Start with the checklist</a>
+          </div>
         </div>
-        <div class="container data-strip">
-          <div>
+        <div class="container data-strip card-grid">
+          <div class="content-card">
             <h3>Data &amp; Stories</h3>
             <p><strong>Prevalence:</strong> 1 in 10 adults experience symptoms; 3% have severe RLS.</p>
             <p><strong>Patient voice:</strong> “I sleep in two-hour stretches and still show up for my family.”</p>
             <p><strong>Current gaps:</strong> Limited research funding and inconsistent access to specialists.</p>
           </div>
-          <div>
+          <div class="content-card">
             <h3>Current Policy Gaps</h3>
             <ul class="plain-list">
               <li>Insufficient NIH research investment specific to RLS.</li>
@@ -95,11 +107,12 @@
         </div>
       </section>
 
-      <section class="section alt" id="policy" aria-labelledby="policy-title">
+      <section class="section alt band" id="policy" aria-labelledby="policy-title">
         <div class="container">
+          <p class="eyebrow">Policy priorities</p>
           <h2 id="policy-title">Know the Policy Landscape</h2>
-          <div class="policy-grid">
-            <div>
+          <div class="policy-grid card-grid">
+            <div class="content-card">
               <h3>Legislative Task</h3>
               <p>
                 Support dedicated NIH funding for Restless Legs Syndrome research and improve
@@ -110,7 +123,7 @@
                 healthcare costs, improves sleep-related public health, and supports caregivers.
               </p>
             </div>
-            <div>
+            <div class="content-card">
               <h3>Bill Tracker</h3>
               <ul class="plain-list">
                 <li><strong>H.R. 2031:</strong> RLS Research Advancement Act – House Energy &amp; Commerce Committee.</li>
@@ -118,7 +131,7 @@
                 <li><strong>Status:</strong> Awaiting committee hearings; advocacy needed for co-sponsors.</li>
               </ul>
             </div>
-            <div>
+            <div class="content-card">
               <h3>Key Committees</h3>
               <ul class="plain-list">
                 <li>House Energy &amp; Commerce (Health Subcommittee)</li>
@@ -277,16 +290,17 @@ Thank you for your leadership,
 
       <section class="section" id="support" aria-labelledby="support-title">
         <div class="container">
+          <p class="eyebrow">Stay connected</p>
           <h2 id="support-title">Ongoing Support</h2>
-          <div class="support-grid">
-            <div>
+          <div class="support-grid card-grid">
+            <div class="content-card">
               <h3>Advocacy Alerts</h3>
               <p>
                 Get notified when urgent action is needed on hearings, votes, or budget decisions.
               </p>
               <button class="button" type="button">Sign Up for Alerts</button>
             </div>
-            <div>
+            <div class="content-card">
               <h3>Key Dates</h3>
               <ul class="plain-list">
                 <li>May 15: NIH budget listening session</li>
@@ -294,10 +308,10 @@ Thank you for your leadership,
                 <li>July 10: Senate HELP committee vote</li>
               </ul>
             </div>
-            <div>
+            <div class="content-card cta-card">
               <h3>Contact Our Team</h3>
-              <p>Email: advocacy@rlsnetwork.org</p>
-              <p>Phone: (555) 123-4567</p>
+              <p><a class="action-link" href="mailto:advocacy@rlsnetwork.org">Email: advocacy@rlsnetwork.org</a></p>
+              <p><a class="action-link" href="tel:+15551234567">Phone: (555) 123-4567</a></p>
               <p>Live help: Mon–Fri, 9 a.m.–5 p.m.</p>
             </div>
           </div>
@@ -380,11 +394,12 @@ Thank you for your leadership,
         </div>
       </section>
 
-      <section class="section" id="research" aria-labelledby="research-title">
+      <section class="section interior-hero" id="research" aria-labelledby="research-title">
         <div class="container">
+          <p class="eyebrow">Evidence + tools</p>
           <h2 id="research-title">Research &amp; Resources</h2>
           <div class="resource-layout">
-            <aside class="filter" aria-label="Filter resources">
+            <aside class="filter content-card" aria-label="Filter resources">
               <h3>Filter by topic</h3>
               <ul>
                 <li><button type="button">Research updates</button></li>
@@ -392,7 +407,7 @@ Thank you for your leadership,
                 <li><button type="button">Policy briefs</button></li>
               </ul>
             </aside>
-            <div class="resource-list">
+            <div class="resource-list content-card">
               <ul>
                 <li><a href="#">RLS Research Brief (PDF)</a></li>
                 <li><a href="#">Patient Care Checklist</a></li>
