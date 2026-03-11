@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>RLS Advocacy Network | Advocacy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    <header class="site-header" aria-label="Primary">
+      <div class="container header-content">
+        <a class="logo" href="index.html"><span class="logo-mark">RLS</span><span class="logo-text">Advocacy Network</span></a>
+        <nav class="primary-nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a class="active" href="advocacy.html">Advocacy</a>
+          <a href="care.html">Symptoms &amp; Care</a>
+          <a href="resources.html">Resources</a>
+          <a class="cta" href="resources.html#donate">Donate</a>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="section alt band" id="policy">
+        <div class="container">
+          <p class="eyebrow">Policy priorities</p>
+          <h1>Know the Policy Landscape</h1>
+          <div class="policy-grid card-grid">
+            <div class="content-card"><h3>Legislative Task</h3><p>Support dedicated NIH funding for RLS research and improve clinician training.</p></div>
+            <div class="content-card"><h3>Bill Tracker</h3><ul class="plain-list"><li><strong>H.R. 2031:</strong> RLS Research Advancement Act</li><li><strong>S. 1120:</strong> Sleep Health Equity Act</li></ul></div>
+            <div class="content-card"><h3>Key Committees</h3><ul class="plain-list"><li>House Energy &amp; Commerce</li><li>Senate HELP</li><li>Labor-HHS Appropriations</li></ul></div>
+          </div>
+        </div>
+      </section>
+      <section class="section" id="finder">
+        <div class="container">
+          <h2>Identify Your Legislators</h2>
+          <form class="finder" aria-label="Legislator lookup">
+            <label for="zip">ZIP Code</label>
+            <input id="zip" name="zip" type="text" inputmode="numeric" placeholder="e.g., 20001" />
+            <button class="button" type="submit">Find Legislators</button>
+          </form>
+          <div id="finder-results" class="results" aria-live="polite"></div>
+        </div>
+      </section>
+      <section class="section alt" id="action">
+        <div class="container">
+          <h2>Learn How to Take Action</h2>
+          <div class="action-grid">
+            <div><h3>Email a Legislator</h3><ol><li>State your location and connection to RLS.</li><li>Ask for specific support.</li><li>Share a brief story.</li></ol></div>
+            <div><h3>Call Their Office</h3><p class="script">“Hello, I’m calling to ask Rep. ____ to support increased NIH funding for RLS research.”</p></div>
+            <div><h3>Request a Meeting</h3><ul class="plain-list"><li>Ask for district office hours.</li><li>Bring one clear ask.</li><li>Follow up by email.</li></ul></div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer"><div class="container footer-bottom"><span>Accessibility Statement</span><span>Privacy</span><span>Terms</span></div></footer>
+    <script src="script.js"></script>
+  </body>
+</html>

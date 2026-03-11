@@ -593,3 +593,96 @@ textarea {
   font-weight: 600;
   color: var(--text-dark);
 }
+
+
+.primary-nav {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 999px;
+  padding: 0.3rem;
+  gap: 0.2rem;
+}
+
+.primary-nav a {
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+}
+
+.primary-nav a.active {
+  background: rgba(255, 255, 255, 0.22);
+  text-decoration: none;
+}
+
+.logo { text-decoration: none; }
+
+.overlap-showcase {
+  background: linear-gradient(180deg, #f6f9ff 0%, #ffffff 100%);
+  overflow: hidden;
+}
+
+.stacked-visual {
+  position: relative;
+  min-height: 320px;
+}
+
+.stack-card {
+  position: absolute;
+  width: 70%;
+  height: 180px;
+  border-radius: 16px;
+  box-shadow: 0 14px 30px rgba(0, 44, 88, 0.18);
+}
+
+.stack-card-one {
+  background: linear-gradient(130deg, #0066cc, #8ccfff);
+  top: 10px;
+  left: 6%;
+  transform: rotate(-6deg);
+}
+
+.stack-card-two {
+  background: linear-gradient(130deg, #0f2744, #0066cc);
+  top: 95px;
+  right: 0;
+  transform: rotate(8deg);
+}
+
+.stack-card-three {
+  background: linear-gradient(130deg, #f9c846, #f6e08b);
+  top: 180px;
+  left: 18%;
+  transform: rotate(-2deg);
+}
+
+.overlap-band {
+  padding-top: 5.5rem;
+  padding-bottom: 5rem;
+  background: linear-gradient(180deg, #f5f9ff, #edf3ff);
+}
+
+.overlap-band .treatment-grid {
+  align-items: start;
+}
+
+.overlap-left {
+  transform: translateY(8px);
+}
+
+.overlap-center {
+  transform: translateY(-20px);
+}
+
+.overlap-right {
+  transform: translateY(20px);
+}
+
+@media (max-width: 900px) {
+  .primary-nav {
+    border-radius: 16px;
+    width: 100%;
+    justify-content: center;
+  }
+  .overlap-left,
+  .overlap-center,
+  .overlap-right { transform: none; }
+}

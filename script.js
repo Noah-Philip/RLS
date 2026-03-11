@@ -36,46 +36,50 @@ const sampleLegislators = {
 const form = document.querySelector(".finder");
 const results = document.getElementById("finder-results");
 
-const renderResults = (items) => {
-  if (!items || items.length === 0) {
-    results.innerHTML =
-      "<p>No sample data for that ZIP yet. Please try 20001 or 98101.</p>";
-    return;
-  }
+if (form && results) {
+  const renderResults = (items) => {
+    if (!items || items.length === 0) {
+      results.innerHTML =
+        "<p>No sample data for that ZIP yet. Please try 20001 or 98101.</p>";
+      return;
+    }
 
-  results.innerHTML = items
-    .map(
-      (item) => `
+    results.innerHTML = items
+      .map(
+        (item) => `
       <div class="result-item">
         <h4>${item.name} <span>${item.role}</span></h4>
         <p><strong>Phone:</strong> ${item.phone}</p>
         <p><strong>Email:</strong> ${item.email}</p>
         <p><strong>Committees:</strong> ${item.committees}</p>
       </div>
-    `
-    )
-    .join("");
-};
+    `,
+      )
+      .join("");
+  };
 
-form.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const zip = document.getElementById("zip").value.trim();
-  renderResults(sampleLegislators[zip]);
-});
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const zip = document.getElementById("zip").value.trim();
+    renderResults(sampleLegislators[zip]);
+  });
+}
 
 const accordionTriggers = document.querySelectorAll(".accordion-trigger");
-accordionTriggers.forEach((trigger) => {
-  trigger.addEventListener("click", () => {
-    const isExpanded = trigger.getAttribute("aria-expanded") === "true";
-    accordionTriggers.forEach((item) => {
-      const panel = document.getElementById(item.getAttribute("aria-controls"));
-      item.setAttribute("aria-expanded", "false");
-      panel.hidden = true;
+if (accordionTriggers.length > 0) {
+  accordionTriggers.forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const isExpanded = trigger.getAttribute("aria-expanded") === "true";
+      accordionTriggers.forEach((item) => {
+        const panel = document.getElementById(item.getAttribute("aria-controls"));
+        item.setAttribute("aria-expanded", "false");
+        panel.hidden = true;
+      });
+      if (!isExpanded) {
+        const panel = document.getElementById(trigger.getAttribute("aria-controls"));
+        trigger.setAttribute("aria-expanded", "true");
+        panel.hidden = false;
+      }
     });
-    if (!isExpanded) {
-      const panel = document.getElementById(trigger.getAttribute("aria-controls"));
-      trigger.setAttribute("aria-expanded", "true");
-      panel.hidden = false;
-    }
   });
-});
+}
