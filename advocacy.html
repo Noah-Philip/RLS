@@ -40,9 +40,26 @@
         <div class="container">
           <h2>Identify Your Legislators</h2>
           <form class="finder" aria-label="Legislator lookup">
-            <label for="zip">ZIP Code</label>
-            <input id="zip" name="zip" type="text" inputmode="numeric" placeholder="e.g., 20001" />
-            <button class="button" type="submit">Find Legislators</button>
+            <div class="finder-field">
+              <label for="street">Street Address</label>
+              <input id="street" name="street" type="text" autocomplete="street-address" placeholder="123 Main St" required />
+            </div>
+            <div class="finder-field">
+              <label for="city">City</label>
+              <input id="city" name="city" type="text" autocomplete="address-level2" placeholder="City" required />
+            </div>
+            <div class="finder-field finder-field-state">
+              <label for="state">State</label>
+              <input id="state" name="state" type="text" maxlength="2" autocomplete="address-level1" placeholder="CA" required />
+            </div>
+            <div class="finder-field finder-field-zip">
+              <label for="zip">ZIP</label>
+              <input id="zip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="94103" required />
+            </div>
+            <div class="finder-actions">
+              <button class="button" type="submit">Find Legislators</button>
+              <button class="button secondary" type="button" id="use-location">Use my location</button>
+            </div>
           </form>
           <div id="finder-results" class="results" aria-live="polite"></div>
         </div>

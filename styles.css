@@ -686,3 +686,87 @@ textarea {
   .overlap-center,
   .overlap-right { transform: none; }
 }
+
+.finder-field {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 220px;
+}
+
+.finder-field-state,
+.finder-field-zip {
+  min-width: 120px;
+}
+
+.finder-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.button.secondary {
+  background: #e7f1ff;
+  color: var(--deep-blue);
+}
+
+.finder-status-loading {
+  color: var(--medium-blue);
+}
+
+.finder-status-error {
+  color: #9b1c1c;
+}
+
+.finder-status-empty {
+  color: #555;
+}
+
+.finder-normalized {
+  margin-top: 0;
+  margin-bottom: 1rem;
+}
+
+.legislator-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.legislator-card {
+  border: 1px solid #dbe6f2;
+  border-radius: 12px;
+  padding: 1rem;
+}
+
+.legislator-head {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.legislator-photo,
+.legislator-photo-placeholder {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #e9eef5;
+}
+
+.legislator-head h3 {
+  margin: 0;
+}
+
+.legislator-title,
+.legislator-meta {
+  margin: 0.15rem 0;
+}
+
+.legislator-meta {
+  color: #415466;
+  font-size: 0.95rem;
+}
+
+.legislator-details p {
+  margin: 0.35rem 0;
+}
