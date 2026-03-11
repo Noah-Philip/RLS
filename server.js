@@ -7,6 +7,45 @@ import { ApiError, dedupeLegislators, geocodeAddress, lookupGoogleCivic, lookupO
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
+function stripWrappingQuotes(value) {
+  if (
+    (value.startsWith('"') && value.endsWith('"')) ||
+    (value.startsWith("'") && value.endsWith("'"))
+  ) {
+    return value.slice(1, -1);
+  }
+  return value;
+}
+
+async function loadDotEnv() {
+  const envPath = path.join(__dirname, '.env');
+
+  try {
+    const raw = await fs.readFile(envPath, 'utf8');
+    for (const line of raw.split(/\r?\n/)) {
+      const trimmed = line.trim();
+      if (!trimmed || trimmed.startsWith('#')) {
+        continue;
+      }
+
+      const separator = trimmed.indexOf('=');
+      if (separator <= 0) {
+        continue;
+      }
+
+      const key = trimmed.slice(0, separator).trim();
+      const value = stripWrappingQuotes(trimmed.slice(separator + 1).trim());
+      if (!process.env[key]) {
+        process.env[key] = value;
+      }
+    }
+  } catch (error) {
+    if (error.code !== 'ENOENT') {
+      console.warn('Unable to read .env file:', error.message);
+    }
+  }
+}
+
 const port = Number(process.env.PORT || 3000);
 
 const mimeTypes = {
@@ -130,8 +169,10 @@ const server = http.createServer(async (req, res) => {
   }
 });
 
+await loadDotEnv();
+
 server.listen(port, () => {
   console.log(`RLS site running on http://localhost:${port}`);
-  console.log('Set GOOGLE_CIVIC_API_KEY and OPENSTATES_API_KEY in your environment.');
+  console.log('Set GOOGLE_CIVIC_API_KEY and OPENSTATES_API_KEY in your environment or .env file.');
   console.log('Optional: set GOOGLE_GEOCODING_API_KEY for geocoding and reverse geocoding.');
 });
