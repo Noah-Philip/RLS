@@ -2,7 +2,7 @@ import http from 'http';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import { ApiError, dedupeLegislators, geocodeAddress, lookupGoogleCivic, lookupOpenStates, reverseGeocode } from './server/civic.js';
+import { ApiError, geocodeAddress, lookupOpenStates, reverseGeocode } from './server/civic.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -100,10 +100,20 @@ async function parseJsonBody(req) {
   return raw ? JSON.parse(raw) : {};
 }
 
+function normalizeLocation(latitude, longitude) {
+  if (!Number.isFinite(latitude) || !Number.isFinite(longitude)) {
+    throw new ApiError('INVALID_ADDRESS', 'Latitude and longitude must be valid numbers.', 400);
+  }
+
+  return {
+    formattedAddress: `${latitude.toFixed(6)}, ${longitude.toFixed(6)}`,
+    latitude,
+    longitude,
+  };
+}
+
 async function buildLookupResponse(normalizedAddress) {
-  const civicLegislators = await lookupGoogleCivic(normalizedAddress.formattedAddress);
-  const openstatesLegislators = await lookupOpenStates(normalizedAddress.latitude, normalizedAddress.longitude);
-  const legislators = dedupeLegislators(civicLegislators, openstatesLegislators);
+  const legislators = await lookupOpenStates(normalizedAddress.latitude, normalizedAddress.longitude);
 
   if (legislators.length === 0) {
     throw new ApiError('NO_DISTRICT_MATCH', 'No legislators were found for this address.', 404);
@@ -114,8 +124,7 @@ async function buildLookupResponse(normalizedAddress) {
     normalizedAddress,
     legislators,
     metadata: {
-      civicOfficialsCount: civicLegislators.length,
-      openStatesOfficialsCount: openstatesLegislators.length,
+      openStatesOfficialsCount: legislators.length,
     },
   };
 }
@@ -152,7 +161,16 @@ const server = http.createServer(async (req, res) => {
 
     if (req.method === 'POST' && req.url === '/api/legislators/by-location') {
       const body = await parseJsonBody(req);
-      const normalizedAddress = await reverseGeocode(Number(body.latitude), Number(body.longitude));
+      const latitude = Number(body.latitude);
+      const longitude = Number(body.longitude);
+      let normalizedAddress = normalizeLocation(latitude, longitude);
+
+      try {
+        normalizedAddress = await reverseGeocode(latitude, longitude);
+      } catch {
+        // Keep coordinate-based label if reverse geocoding fails.
+      }
+
       const payload = await buildLookupResponse(normalizedAddress);
       return sendJson(res, 200, payload);
     }
@@ -173,6 +191,5 @@ await loadDotEnv();
 
 server.listen(port, () => {
   console.log(`RLS site running on http://localhost:${port}`);
-  console.log('Set GOOGLE_CIVIC_API_KEY and OPENSTATES_API_KEY in your environment or .env file.');
-  console.log('Optional: set GOOGLE_GEOCODING_API_KEY for geocoding and reverse geocoding.');
+  console.log('Set OPENSTATES_API_KEY in your environment or .env file.');
 });
