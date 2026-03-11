@@ -5,6 +5,7 @@
   --light-blue: #8ccfff;
   --white: #ffffff;
   --text-dark: #0b1b2b;
+  --serif-display: "Playfair Display", Georgia, serif;
 }
 
 html {
@@ -120,7 +121,10 @@ img {
 }
 
 .hero {
-  background: linear-gradient(120deg, var(--deep-blue), var(--light-blue));
+  background:
+    linear-gradient(120deg, rgba(5, 17, 35, 0.85), rgba(0, 51, 102, 0.75)),
+    url("https://images.unsplash.com/photo-1471017214875-8b68f1a7b5e0?auto=format&fit=crop&w=1800&q=80")
+      center/cover;
   color: var(--white);
   padding: 5rem 0;
 }
@@ -134,8 +138,16 @@ img {
 }
 
 .hero h1 {
+  font-family: var(--serif-display);
   font-size: clamp(2rem, 4vw, 3.5rem);
   margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-family: var(--serif-display);
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  margin-top: 0;
+  line-height: 1.2;
 }
 
 .hero-subtitle {
@@ -217,6 +229,38 @@ img {
   background: #f3f8ff;
 }
 
+.band {
+  background: linear-gradient(180deg, #eef4ff, #f8fbff);
+}
+
+.interior-hero {
+  background:
+    linear-gradient(135deg, rgba(7, 15, 28, 0.88), rgba(7, 15, 28, 0.58)),
+    url("https://images.unsplash.com/photo-1456324504439-367cee3b3c32?auto=format&fit=crop&w=1800&q=80")
+      center/cover;
+  color: var(--white);
+}
+
+.interior-hero .content-card,
+.interior-hero .filter button,
+.interior-hero .resource-list a,
+.interior-hero .action-link {
+  color: var(--text-dark);
+}
+
+.interior-hero-content {
+  align-items: stretch;
+}
+
+.support-panel {
+  align-self: center;
+  padding: 1.5rem;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(3px);
+}
+
 .two-column {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -243,6 +287,25 @@ img {
   background: var(--white);
   padding: 1.5rem;
   border-left: 4px solid var(--golden-yellow);
+}
+
+.card-grid {
+  gap: 1.4rem;
+}
+
+.content-card {
+  background: var(--white);
+  border: 1px solid #dbe6f2;
+  border-radius: 14px;
+  padding: 1.35rem;
+  box-shadow: 0 8px 20px rgba(9, 27, 43, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.content-card:hover,
+.content-card:focus-within {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 30px rgba(9, 27, 43, 0.15);
 }
 
 .plain-list {
@@ -391,6 +454,19 @@ textarea {
   cursor: pointer;
 }
 
+.cta-card {
+  background: linear-gradient(160deg, #fdf7e2, #fff);
+}
+
+.action-link {
+  display: inline-flex;
+  font-weight: 700;
+  background: #ffffff;
+  border: 1px solid #dbe6f2;
+  border-radius: 999px;
+  padding: 0.3rem 0.8rem;
+}
+
 .resource-list ul {
   list-style: none;
   padding: 0;
@@ -488,6 +564,15 @@ textarea {
   .hero-visual {
     width: 180px;
     height: 180px;
+  }
+
+  .section,
+  .hero {
+    padding: 3rem 0;
+  }
+
+  .support-panel {
+    margin-top: 0.5rem;
   }
 }
 
